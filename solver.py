@@ -1,6 +1,8 @@
 with open("dict", "r") as file:
     words = file.read().split('\n')
 
+lenof_dict = len(words)
+
 forbidden1 = []
 forbidden2 = []
 forbidden3 = []
@@ -67,6 +69,9 @@ while (1):
         i += 1
     while not is_working(words[counter]):
         counter += 1
+        if counter == lenof_dict:
+            print("No solutions found in given dictionary.")
+            exit()
     guess = words[counter]
     print("\nguess : " + words[counter])
 print("Success !")
