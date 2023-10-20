@@ -1,6 +1,8 @@
 with open("dict", "r") as file:
     words = file.read().split('\n')
 
+lenof_dict = len(words)
+
 forbidden1 = []
 forbidden2 = []
 forbidden3 = []
@@ -38,7 +40,7 @@ def is_working(guess):
 
 feed = "-----"
 
-while (1):
+while (counter < lenof_dict):
     feed = input("Input Wordle feedback :\n (-) for nonexistent letter\n (x) for misplaced letter\n (o) for correctly placed letter\n>>> ")
     if feed == "ooooo":
         break
@@ -69,4 +71,8 @@ while (1):
         counter += 1
     guess = words[counter]
     print("\nguess : " + words[counter])
-print("Success !")
+
+if counter >= lenof_dict:
+    print("No solutions found in given dictionary.")
+else:
+    print("Success !")
