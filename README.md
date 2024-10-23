@@ -4,7 +4,7 @@ Small unoptimized Wordle solver.
 ## Usage
 Pretty self-explanatory.
 
-launch program using python :
+launch program using the python interpreter :
 ```
 python3 solver.py
 ```
